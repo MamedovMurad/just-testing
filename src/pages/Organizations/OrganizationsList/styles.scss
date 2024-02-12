@@ -1,0 +1,28 @@
+.light {
+  --organizations-list-title-color: #212121;
+}
+
+.dark {
+  --organizations-list-title-color: #b0b3b8;
+}
+
+.organizations-list {
+  z-index: 5;
+  height: 100%;
+
+  &-title {
+    color: var(--organizations-list-title-color);
+  }
+
+  &.table svg {
+    height: 50%;
+    width: 50%;
+  }
+}
+
+.btn-add-icon {
+  height: 14px;
+  width: 14px;
+  fill: #fff !important;
+  margin-right: 6px;
+}

@@ -1,0 +1,74 @@
+.light {
+  --regions-sidebar-border-color: #e8e8ea;
+  --regions-sidebar-bg: #fff;
+  --regions-tree-view-title-color: #5a595c;
+  --regions-tree-view-title-hover-bg-color: #f2f0f0;
+  --regions-tree-view-title-bg: #faf8f8;
+  --regions-content-header-bg-color: #fff;
+  --regions-content-header-link-color: #424242;
+  --regions-content-header-link-bg: #bab8b86d;
+}
+
+.dark {
+  --regions-sidebar-border-color: #1d1e1f;
+  --regions-sidebar-bg: #242526;
+  --regions-tree-view-title-color: #b0b0b0;
+  --regions-tree-view-title-hover-bg-color: #383838;
+  --regions-tree-view-title-bg: #212121;
+  --regions-content-header-bg-color: #242526;
+  --regions-content-header-link-color: #959596;
+  --regions-content-header-link-bg: #4949496d;
+}
+.cancelButtonArea{
+  text-align: center;
+}
+.cancelButton:hover{
+background-color: rgb(173, 172, 172);
+}
+.cancelButton{
+  transition: all 1s;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  height: 29px;
+  width: 29px;
+  line-height: 10px;
+  background-color:#d3d3d3 ;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.regions {
+  width: 100%;
+  height: calc(100% + 4px);
+  margin-top: -4px;
+  display: flex;
+}
+
+.checkbox-container {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+}
+
+.region-tree-item {
+  padding: 4px 8px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 150ms !important;
+  display: flex;
+
+  &:hover {
+    background-color: var(--notifications-header-border-bottom);
+  }
+
+  &:active {
+    transform: scale(0.99);
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 2px;
+  }
+}

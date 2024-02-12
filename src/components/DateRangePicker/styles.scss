@@ -1,0 +1,225 @@
+.light {
+  --date-range-picker-label-color: #424242;
+  --date-range-picker-bg-color: #f0f2f5;
+  --date-range-picker-text-color: #212121;
+  --date-range-picker-border-focus-color: #b6cbfc;
+  --date-range-picker-label-color: #424242;
+  --date-range-picker-readonly-bg-color: #d1d7e1;
+  --date-range-picker-readonly-color: #616161;
+  --date-range-picker-reset-btn-bg-color: #d5d5d5;
+  --date-range-picker-wrapper-bg-color: #fff;
+  --date-range-picker-box-shadow-color: #93959733;
+  --date-range-picker-title-icon-fill: #717171;
+  --date-range-picker-preset-bg: #7171711a;
+  --date-range-picker-preset-bg-hover: #71717133;
+  --date-range-picker-title-hover: #f1f1f1;
+  --date-range-picker-empty-text-color: #757575;
+}
+
+.dark {
+  --date-range-picker-label-color: #959596;
+  --date-range-picker-bg-color: #3a3b3c;
+  --date-range-picker-text-color: #b0b3b8;
+  --date-range-picker-border-focus-color: #394b76;
+  --date-range-picker-label-color: #959596;
+  --date-range-picker-readonly-bg-color: #797b7d;
+  --date-range-picker-readonly-color: #bdbdbd;
+  --date-range-picker-reset-btn-bg-color: #666666;
+  --date-range-picker-wrapper-bg-color: #242526;
+  --date-range-picker-box-shadow-color: #000000bf;
+  --date-range-picker-title-icon-fill: #e0e0e0;
+  --date-range-picker-preset-bg: #e0e0e01a;
+  --date-range-picker-preset-bg-hover: #e0e0e033;
+  --date-range-picker-title-hover: #525252;
+  --date-range-picker-empty-text-color: #949393;
+}
+
+.datepicker {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+  width: max-content;
+  height: fit-content;
+  width: 100%;
+  // z-index: 1000;
+
+  *,
+  & {
+    transition: border-color 50ms, background-color 50ms, color 75ms;
+  }
+
+  &-label {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--date-range-picker-label-color);
+    user-select: none;
+    display: inline-block;
+    padding-left: 12.5px;
+    margin-bottom: 5px;
+    transition: all 150ms ease;
+  }
+
+  &-error {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+
+    position: absolute;
+    left: 12.5px;
+    top: 105%;
+    z-index: 1;
+    color: #ff5252;
+  }
+
+  &-selection {
+    border-radius: 6px;
+    padding: 6px 30px;
+    background-color: var(--date-range-picker-bg-color);
+    display: flex;
+    justify-content: center;
+    border: 2px solid var(--date-range-picker-bg-color);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--date-range-picker-text-color);
+    min-width: max-content;
+    height: calc(19px + 12px + 4px);
+    position: relative;
+
+    &--focus {
+      border-color: var(--date-range-picker-border-focus-color);
+      outline: none;
+    }
+
+    &--error {
+      border-color: #ff5252;
+    }
+
+    &-slot {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &--empty {
+        color: var(--date-range-picker-empty-text-color);
+        font-size: 15px;
+      }
+    }
+
+    &-delimiter {
+      width: 20px;
+      text-align: center;
+      font-weight: 400;
+      margin: 0 10px;
+    }
+  }
+
+  &-reset-btn {
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--date-range-picker-reset-btn-bg-color);
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+
+    & > svg {
+      height: 50%;
+      width: 50%;
+      fill: #fff;
+    }
+  }
+
+  &-calendar {
+    &-wrapper {
+      position: fixed;
+      z-index: 1000;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px var(--date-range-picker-box-shadow-color);
+      overflow: hidden;
+      background-color: var(--date-range-picker-wrapper-bg-color);
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      padding: 10px 12px;
+      user-select: none;
+      cursor: initial;
+
+      &-icon {
+        height: 24px;
+        width: 24px;
+        cursor: pointer;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 100ms;
+
+        &:hover {
+          outline: none;
+          background-color: var(--date-range-picker-title-hover);
+        }
+
+        &:active {
+          transform: scale(0.9);
+        }
+
+        &--rotate {
+          transform: rotateY(180deg);
+
+          &:active {
+            transform: rotateY(180deg) scale(0.9);
+          }
+        }
+
+        & > svg {
+          height: 65%;
+          width: 65%;
+          fill: var(--date-range-picker-title-icon-fill);
+        }
+      }
+
+      &-text {
+        color: var(--date-range-picker-text-color);
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &-range-preset {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--date-range-picker-title-icon-fill);
+    background-color: var(--date-range-picker-preset-bg);
+    border-radius: 4px;
+    padding: 2px 6px;
+    transition: all 50ms;
+
+    &:not(:last-of-type) {
+      margin-right: 6px;
+    }
+
+    &:hover {
+      background-color: var(--date-range-picker-preset-bg-hover);
+    }
+  }
+}

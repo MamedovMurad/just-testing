@@ -1,0 +1,65 @@
+.light {
+  --scrollbar-thumb-bg-color: #bcc0c4a6;
+}
+
+.dark {
+  --scrollbar-thumb-bg-color: #5d5e5fa6;
+}
+
+.scrollbar-thumb {
+  &-vertical {
+    background: var(--scrollbar-thumb-bg-color);
+    border-radius: 16px;
+    cursor: pointer;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+    width: 20vw;
+    transition: border-color 50ms, background-color 50ms, color 75ms;
+  }
+
+  &-horizontal {
+    background: var(--scrollbar-thumb-bg-color);
+    border-radius: 16px;
+    cursor: pointer;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+    height: 20vw;
+    transition: border-color 50ms, background-color 50ms, color 75ms;
+  }
+}
+
+.scrollbar-track {
+  &-vertical {
+    position: absolute;
+    width: 8px !important;
+    visibility: visible;
+    right: 2px;
+    bottom: 2px;
+    top: 2px;
+    border-radius: 3px;
+  }
+
+  &-horizontal {
+    position: absolute;
+    height: 8px !important;
+    visibility: visible;
+  }
+}
+
+.scrollbar-view {
+  &-horizontal {
+    display: flex;
+    flex-direction: row;
+    // scroll-behavior: smooth;
+  }
+
+  &-vertical {
+    display: flex;
+    flex-direction: column;
+    // scroll-behavior: smooth;
+  }
+}

@@ -1,0 +1,36 @@
+.light {
+  --switch-off-bg-color: #ced0d4;
+}
+
+.dark {
+  --switch-off-bg-color: #3e4042;
+}
+
+.switch {
+  width: 40px;
+  height: 24px;
+  border-radius: 32.4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  &-indicator {
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.02);
+    margin: 2px;
+  }
+
+  &--on {
+    background-color: #44ab90;
+    justify-content: flex-end;
+  }
+
+  &--off {
+    background-color: var(--switch-off-bg-color);
+    justify-content: flex-start;
+    transition: border-color 50ms, background-color 50ms, color 75ms;
+  }
+}

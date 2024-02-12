@@ -1,0 +1,100 @@
+@import "./printify/printify.min.css";
+
+@import "./styles/fonts";
+@import "./styles/sizes";
+@import "./styles/typography";
+@import "./styles/colors";
+@import "./styles/layout";
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+}
+
+.app {
+/*   height: 100vh; */
+}
+
+.light {
+  --main-bg-color: #f0f2f5;
+  --border-right: #e8e8ea;
+}
+
+.dark {
+  --main-bg-color: #18191a;
+  --border-right: #1d1e1f;
+}
+
+.main-bg-color {
+  background-color: var(--main-bg-color);
+  transition: background-color 50ms;
+}
+
+.p-absolute {
+  position: absolute;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.d-none {
+  display: none;
+}
+
+.transition {
+  transition: width 200ms ease;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.border-right {
+  border-right: 1px solid var(--border-right);
+}
+
+.mx-auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.ml-n-2 {
+  margin-left: -4px;
+}
+
+.mr-n-2 {
+  margin-right: -4px;
+}
+
+.ml-n2 {
+  margin-left: -4px;
+}
+
+.mr-n2 {
+  margin-right: -4px;
+}
+
+.ml-n4 {
+  margin-left: -8px;
+}
+
+.mr-n4 {
+  margin-right: -8px;
+}

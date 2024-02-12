@@ -1,0 +1,40 @@
+.light {
+  --tooltip-slot-bg: #000000bf;
+  --tooltip-slot-color: #fff;
+}
+
+.dark {
+  --tooltip-slot-bg: #ffffffbf;
+  --tooltip-slot-color: #242526;
+}
+
+.tooltip-wrapper {
+  position: relative;
+  width: fit-content;
+}
+
+.tooltip-slot {
+ 
+  position: fixed;
+  z-index: 100000;
+
+/*   width: max-content;
+  height: max-content; */
+  background-color: var(--tooltip-slot-bg);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 15px;
+  color: var(--tooltip-slot-color);
+  cursor: pointer;
+  user-select: none;
+
+  &--top,
+  &--bottom {
+    transform: translateX(-50%);
+  }
+
+  &--right,
+  &--left {
+    transform: translateY(-50%);
+  }
+}

@@ -1,0 +1,56 @@
+.sidebar-profile {
+  width: 100%;
+  background-color: #030305;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 150ms;
+  position: relative;
+
+  &__img {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background-color: white;
+    transition: all 150ms;
+    cursor: pointer;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__menu {
+    width: 10vw;
+    position: absolute;
+    z-index: 1000;
+    bottom: 45%;
+    left: 85%;
+    transform-origin: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 1px solid #d8d4d4;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba($color: #616161, $alpha: 0.3);
+
+    &-btn {
+      padding: 12px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 500;
+      color: #0a153b;
+      background-color: #fff;
+      transition: all 150ms;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        background-color: #d8d4d4;
+        color: #3c3939;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.modal-action {
+  width: 100%;
+  padding: 6px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 250ms;
+
+  &--active {
+    color: #fff;
+    background-color: #4759e4;
+  }
+}

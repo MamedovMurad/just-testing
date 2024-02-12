@@ -1,0 +1,130 @@
+.light {
+  --calendar-text-color: #212121;
+  --calendar-border-focus-color: #b6cbfc;
+  --calendar-label-color: #424242;
+  --calendar-readonly-bg-color: #d1d7e1;
+  --calendar-readonly-color: #616161;
+  --calendar-wrapper-bg-color: #fff;
+  --calendar-box-shadow-color: #93959733;
+  --calendar-cell-bg-color: #eeeeee;
+  --calendar-cell-color: #606060;
+  --calendar-cell-hover: #d5d5d5;
+  --calendar-cell-not-current-bg-color: #fafbfb;
+  --calendar-cell-not-current-color: #bcbcbc;
+  --calendar-cell-in-range-bg-color: #b6cbfc;
+  --calendar-header-color: #a9a9a9;
+}
+
+.dark {
+  --calendar-text-color: #b0b3b8;
+  --calendar-border-focus-color: #394b76;
+  --calendar-label-color: #959596;
+  --calendar-readonly-bg-color: #797b7d;
+  --calendar-readonly-color: #bdbdbd;
+  --calendar-wrapper-bg-color: #242526;
+  --calendar-box-shadow-color: #000000bf;
+  --calendar-cell-bg-color: #434344;
+  --calendar-cell-color: #9d9d9f;
+  --calendar-cell-hover: #515154;
+  --calendar-cell-not-current-bg-color: #252726;
+  --calendar-cell-not-current-color: #6f6c6c;
+  --calendar-cell-in-range-bg-color: #394b76;
+  --calendar-header-color: #c5c5c5;
+}
+
+.calendar {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background-color: var(--calendar-bg-wrapper-color);
+  box-shadow: 0 5px 20px var(--calendar-box-shadow-color);
+
+  &-grid {
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &-row {
+      width: calc(42.5px * 7 + 6 * 4px) !important;
+      display: flex;
+      justify-content: space-between;
+
+      &:not(:last-of-type) {
+        margin-bottom: 4px;
+      }
+    }
+
+    &-cell {
+      border-radius: 4px;
+      font-size: 16px;
+      height: 35px;
+      width: 42.5px;
+      font-weight: 600;
+      color: var(--calendar-cell-color);
+      background-color: var(--calendar-cell-bg-color);
+      position: relative;
+      cursor: pointer;
+      transition: all 50ms;
+
+      &:hover {
+        background-color: var(--calendar-cell-hover);
+      }
+
+      & > span {
+        position: absolute;
+        top: 45%;
+        right: 10px;
+        transform: translateY(-50%);
+      }
+
+      &--in-range {
+        background-color: var(--calendar-cell-in-range-bg-color);
+        color: #fff;
+      }
+
+      &--active {
+        background-color: #2860e1;
+        color: #fff;
+
+        &:hover {
+          background-color: #2860e1;
+          color: #fff;
+        }
+      }
+
+      &--not-current {
+        background-color: var(--calendar-cell-not-current-bg-color);
+        color: var(--calendar-cell-not-current-color);
+        cursor: initial;
+
+        &:hover {
+          background-color: var(--calendar-cell-not-current-bg-color);
+        }
+      }
+
+      &--header {
+        color: var(--calendar-header-color);
+        background-color: var(--calendar-wrapper-bg-color);
+        cursor: initial;
+
+        &:hover {
+          color: var(--calendar-header-color);
+          background-color: var(--calendar-wrapper-bg-color);
+        }
+
+        & > abbr {
+          text-decoration: none;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}

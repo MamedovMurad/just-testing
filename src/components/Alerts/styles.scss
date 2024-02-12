@@ -1,0 +1,11 @@
+.alerts-container {
+
+  position: fixed;
+  z-index: 100000;
+  bottom: 2.5%;
+  right: 2.5%;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  justify-content: flex-end;
+}

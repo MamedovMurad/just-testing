@@ -1,0 +1,106 @@
+ul.custom__steps{
+    list-style: none;
+    max-width: 95%;
+    margin: 0px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 5px 5px;
+    &>li{
+        justify-content: space-between;
+        display: flex;
+        border-radius: 7px;
+        border: 1px solid rgba(202, 199, 199, 0.363);
+        padding: 10px 15px;
+        margin: 5px;
+        transition: background 0.4s;
+        &:hover{
+            background: rgba(202, 199, 199, 0.363);
+        }
+    }
+
+
+    .actions_step___custom{
+      
+        display: flex;
+        justify-content: space-between;
+        span{
+            cursor: pointer;
+            background-color: rgb(223, 219, 219);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 5px;
+
+       
+        }
+    }
+}
+.steps_update_section{
+    position: relative;
+    padding: 20px;
+    max-width: 95%;
+    margin: 20px auto;
+    border-radius: 12px;
+    background-color: #fff;
+    height: 540px;
+    .button_l svg{
+        fill: #fff !important;
+    }
+    .back__button{
+        display: flex;
+        justify-content: flex-end;
+        button{
+            padding:  4px;
+            background-color: #028878;
+            border: none;
+            margin-top: 20px;
+            color: white;
+            border-radius: 7px;
+            cursor: pointer;
+            width: 70px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+    }
+    form{
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto;
+        input{
+            float: left;
+        }
+      .img__area{
+          text-align: center;
+        margin-top: 20px;
+         
+
+          iframe{
+         
+            width: 77%;
+            height: 213px;
+          }
+      }
+     
+
+        button{
+            padding:  10px;
+            background-color: #028878;
+            border: none;
+            margin-top: 50px;
+            margin-right: 50px;
+            color: white;
+            border-radius: 7px;
+            cursor: pointer;
+            width: 100px;
+            font-weight: 700;
+            font-size: 14px;
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            
+        }
+    }
+}

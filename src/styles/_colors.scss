@@ -1,0 +1,19 @@
+$green-darken-4: #024a4b;
+$green-darken-3: #025a59;
+$green-darken-2: #026a64;
+$green-darken-1: #02796f;
+
+$green: #028878;
+
+$green-lighten-1: #229a83;
+$green-lighten-2: #44ab90;
+$green-lighten-3: #66bb9f;
+$green-lighten-4: #88cbaf;
+$green-lighten-5: #aadbc3;
+$green-lighten-6: #ccead9;
+
+$green-lighten-10: lighten($green, 10%);
+
+.lighten {
+  background-color: $green-lighten-10;
+}

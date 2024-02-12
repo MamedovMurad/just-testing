@@ -1,0 +1,45 @@
+.textfield {
+  &__wrapper {
+    width: 100%;
+    position: relative;
+  }
+
+  &__input {
+    width: 100%;
+    border-radius: 8px;
+    background-color: #e2f8f3;
+    font-size: 20px;
+    font-weight: 400;
+    border: none;
+    padding: 15px 20px;
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__label {
+    font-size: 15px;
+    font-weight: 500;
+    color: #9d9cbd;
+
+    position: absolute;
+    left: 20px;
+    top: 0;
+    opacity: 0;
+    transition: all 150ms ease;
+    z-index: -2;
+
+    &--active {
+      top: -20px;
+      opacity: 1;
+      z-index: 2;
+    }
+  }
+
+  &__input:not(:placeholder-shown) + &__label {
+    top: -20px;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,11 @@
+.light {
+  --switch-text-color: #424242;
+}
+
+.dark {
+  --switch-text-color: #959596;
+}
+
+.switch-text {
+  color: var(--switch-text-color);
+}

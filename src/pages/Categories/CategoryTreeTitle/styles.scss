@@ -1,0 +1,23 @@
+.light {
+  --category-count-bg: #e9ebee;
+}
+
+.dark {
+  --category-count-bg: #3c3d3d;
+}
+
+.category-count {
+  background: var(--category-count-bg);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+@media only screen and (max-width: 900px) {
+  .category-count {
+    padding:2px;
+    font-size: 13px;
+  }
+.custom__spen{
+font-size: 11px;
+}
+}

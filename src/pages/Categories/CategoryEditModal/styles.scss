@@ -1,0 +1,13 @@
+.category-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-edit-btn {
+  & svg {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+  }
+}

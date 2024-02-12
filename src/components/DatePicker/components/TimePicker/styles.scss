@@ -1,0 +1,116 @@
+.light {
+  --time-picker-text-color: #212121;
+  --time-picker-border-focus-color: #b6cbfc;
+  --time-picker-label-color: #424242;
+  --time-picker-readonly-bg-color: #d1d7e1;
+  --time-picker-readonly-color: #616161;
+  --time-picker-wrapper-bg-color: #fff;
+  --time-picker-box-shadow-color: #93959733;
+  --time-picker-cell-bg-color: #eeeeee;
+  --time-picker-cell-color: #606060;
+  --time-picker-cell-hover: #d5d5d5;
+  --time-picker-cell-not-current-bg-color: #fafbfb;
+  --time-picker-cell-not-current-color: #bcbcbc;
+  --time-picker-cell-in-range-bg-color: #b6cbfc;
+  --time-picker-header-color: #a9a9a9;
+  --time-picker-slot-bg: #f0f2f5;
+}
+
+.dark {
+  --time-picker-text-color: #b0b3b8;
+  --time-picker-border-focus-color: #394b76;
+  --time-picker-label-color: #959596;
+  --time-picker-readonly-bg-color: #797b7d;
+  --time-picker-readonly-color: #bdbdbd;
+  --time-picker-wrapper-bg-color: #242526;
+  --time-picker-box-shadow-color: #000000bf;
+  --time-picker-cell-bg-color: #434344;
+  --time-picker-cell-color: #9d9d9f;
+  --time-picker-cell-hover: #515154;
+  --time-picker-cell-not-current-bg-color: #252726;
+  --time-picker-cell-not-current-color: #6f6c6c;
+  --time-picker-cell-in-range-bg-color: #394b76;
+  --time-picker-header-color: #c5c5c5;
+  --time-picker-slot-bg: #3a3b3c;
+}
+
+.time-picker {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background-color: var(--time-picker-bg-wrapper-color);
+
+  & > div {
+    padding: 2px 0;
+  }
+
+  & > div:first-of-type {
+    border-bottom: 1px solid var(--time-picker-cell-not-current-color);
+  }
+
+  &-slot {
+    border-radius: 6px;
+    padding: 6px 10px;
+    background-color: var(--time-picker-slot-bg);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--time-picker-text-color);
+    min-width: 60px;
+    min-height: 33px;
+  }
+
+  &-label {
+    display: inline-block;
+    font-size: 12px;
+    width: max-content;
+    margin-bottom: 4px;
+  }
+
+  &-selection {
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid var(--time-picker-cell-not-current-color);
+
+    &-slot {
+      width: 35px;
+      border-radius: 6px;
+      background-color: var(--time-picker-slot-bg);
+      color: var(--time-picker-text-color);
+      overflow: hidden;
+    }
+
+    &-item {
+      padding: 2px 4px;
+      cursor: pointer;
+      font-size: 14px;
+      text-align: center;
+      font-weight: 500;
+      color: var(--time-picker-cell-color);
+
+      &:hover {
+        background-color: var(--time-picker-cell-hover);
+      }
+
+      &--active {
+        background-color: #2860e1;
+        color: #fff;
+
+        &:hover {
+          background-color: #2860e1;
+          color: #fff;
+        }
+      }
+
+      &--disable {
+        cursor: initial;
+        background-color: var(--time-picker-cell-not-current-bg-color);
+        color: var(--time-picker-cell-not-current-color);
+
+        &:hover {
+          cursor: initial;
+          background-color: var(--time-picker-cell-not-current-bg-color);
+          color: var(--time-picker-cell-not-current-color);
+        }
+      }
+    }
+  }
+}

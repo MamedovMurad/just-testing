@@ -1,0 +1,95 @@
+.light {
+  --tree-view-node-title-bg: #fff;
+  --tree-view-node-title-active-bg: #e0e0e0;
+  --tree-view-node-title-text-color: #212121;
+  --tree-view-node-arrow-wrapper-bg: #c5c5c5;
+  --tree-view-node-arrow-fill: #414141;
+  --tree-view-node-content-border-left: #2e292966;
+}
+
+.dark {
+  --tree-view-node-title-bg: #242526;
+  --tree-view-node-title-active-bg: #3b3c3d;
+  --tree-view-node-title-text-color: #b0b3b8;
+  --tree-view-node-arrow-wrapper-bg: #777c82;
+  --tree-view-node-arrow-fill: #bdbdbd;
+  --tree-view-node-content-border-left: #d5c0c066;
+}
+
+.tree-view-node {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 6px;
+  // overflow: hidden;
+  margin: 10px 0;
+  min-width: max-content;
+  // width: max-content;
+
+  &-title {
+    width: 100%;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    padding: 12px;
+    color: var(--tree-view-node-title-text-color);
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 6px;
+    // overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-color: var(--tree-view-node-title-bg);
+    transition: all 0.4s;
+
+    &--no-children {
+      padding-left: calc(12px + 22px + 10px);
+    }
+
+    &--active {
+      background-color: var(--tree-view-node-title-active-bg);
+    }
+  }
+
+  &-arrow-down-wrapper {
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    background-color: var(--tree-view-node-arrow-wrapper-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+  }
+
+  &-arrow-down {
+    height: 100%;
+    width: 100%;
+    transform: rotate(-90deg);
+    transition: all 0.4s;
+    fill: var(--tree-view-node-arrow-fill);
+
+    &--active {
+      transform: rotate(0);
+    }
+  }
+
+  &-content {
+    will-change: transform, opacity, height;
+    padding-left: 20px;
+    border-left: 2px dashed var(--tree-view-node-content-border-left);
+    // overflow: hidden;
+    overflow: visible;
+    // width: calc(100% - 12px - 11px);
+    // width: max-content;
+    // width: 100%;
+    // min-width: max-content;
+    margin-left: 23px;
+  }
+}
+@media only screen and (max-width: 900px) {
+
+.tree-view-node-title{
+  width: 500px;
+}
+}

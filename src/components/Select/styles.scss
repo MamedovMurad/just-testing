@@ -1,0 +1,298 @@
+.light {
+  --select-bg-color: #f0f2f5;
+  --select-text-color: #212121;
+  --select-border-focus-color: #b6cbfc;
+  --select-label-color: #424242;
+  --select-readonly-bg-color: #d1d7e1;
+  --select-readonly-color: #616161;
+  --select-reset-btn-bg-color: #d5d5d5;
+  --select-select-bg-color: #fff;
+  --select-box-shadow-color: #93959733;
+  --select-option-color: #313131;
+  --select-option-hover-bg-color: #e6e6e6;
+  --select-selected-option-bg-color: #dbe4fa;
+  --select-selected-option-color: #285fe1;
+  --select-searched-option-bg-color: #f0f0f0;
+}
+
+.dark {
+  --select-bg-color: #3a3b3c;
+  --select-text-color: #b0b3b8;
+  --select-border-focus-color: #394b76;
+  --select-label-color: #959596;
+  --select-readonly-bg-color: #797b7d;
+  --select-readonly-color: #bdbdbd;
+  --select-reset-btn-bg-color: #666666;
+  --select-select-bg-color: #242526;
+  --select-box-shadow-color: #000000bf;
+  --select-option-color: #eeeeee;
+  --select-option-hover-bg-color: #171717;
+  --select-selected-option-bg-color: #263951;
+  --select-selected-option-color: #4599ff;
+  --select-searched-option-bg-color: #454748;
+}
+
+.select {
+  user-select: none;
+  position: relative;
+
+  &-readonly {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    border-radius: 6px;
+  }
+
+  &-label {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--select-label-color);
+    padding-left: 12.5px;
+    margin-bottom: 5px;
+    display: inline-block;
+
+    & > span {
+      color: #ff0000;
+    }
+  }
+
+  &-field {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 6px;
+    background-color: var(--select-bg-color);
+    font-size: 15px;
+    font-weight: 500;
+    color: #212121;
+    border: 2px solid var(--select-bg-color);
+    color: var(--select-text-color);
+    padding: 7.5px 10px;
+    padding-right: calc(20px + 10px);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 50ms, background-color 50ms, color 75ms;
+
+    &--error {
+      border-color: #ff5252e3;
+    }
+
+    &--focus {
+      border-color: var(--select-border-focus-color);
+    }
+
+    &--readonly {
+      border-color: var(--select-readonly-bg-color);
+      background-color: var(--select-readonly-bg-color);
+      color: var(--select-readonly-color);
+      cursor: context-menu;
+    }
+
+    & > svg {
+      height: 20px;
+      width: 20px;
+      fill: var(--select-option-color);
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transition: all 200ms;
+
+      &#search {
+        left: 7px;
+        transform: translateY(-50%);
+        z-index: 5;
+
+        &:hover {
+          transform: translateY(-50%) scale(1.1);
+        }
+      }
+    }
+  }
+
+  &-loader {
+    width: 100%;
+    height: 2px;
+    background-color: #4759e48e;
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    border-radius: 150px;
+  }
+
+  &-field--loading &-loader {
+    animation: loading 1s infinite;
+  }
+
+  &-search {
+    position: absolute;
+    top: 0;
+    left: 0;
+   height: 100%;
+   padding-left: 4px;
+    width: 100%;
+    background-color: transparent;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--select-text-color);
+    border: none;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:not(:placeholder-shown):focus {
+      cursor: text;
+    }
+  }
+
+  &-value-slot {
+    padding: 2.5px 5px;
+    border-radius: 4px;
+    background-color: #c7c5c5;
+    display: flex;
+    align-items: center;
+    width: max-content;
+    margin-bottom: 5px;
+
+    &:not(:last-of-type) {
+      margin-right: 5px;
+    }
+
+    &-icon {
+      height: 16px;
+      width: 16px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  }
+
+  &-reset-btn {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--select-reset-btn-bg-color);
+    transition: all 50ms, background-color 500ms;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+
+    & > svg {
+      height: 50%;
+      width: 50%;
+      fill: #fff;
+    }
+  }
+
+  &-select-wrapper {
+    position: relative;
+    z-index: 1001;
+  }
+
+  &-select {
+    background-color: var(--select-select-bg-color);
+    box-shadow: 0 5px 20px var(--select-box-shadow-color);
+    width: 100%;
+    position: absolute;
+    top: calc(100% + 2.5px);
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: top center;
+    border-radius: 6px;
+    transition: border-color 50ms, background-color 50ms, color 75ms;
+    // border: 1px solid #f0f0f0;
+  }
+
+  &-option {
+    padding: 10px 15px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1;
+    color: var(--select-option-color);
+    transition: all 200ms;
+    cursor: pointer;
+    border-radius: 6px;
+    width: 100%;
+    transition: border-color 50ms, background-color 50ms, color 75ms;
+
+    &:not(:last-of-type) {
+      margin-bottom: 2px;
+    }
+
+    &:hover {
+      background-color: var(--select-option-hover-bg-color);
+    }
+
+    &--searched {
+      background-color: var(--select-searched-option-bg-color);
+    }
+
+    &--selected {
+      background-color: var(--select-selected-option-bg-color);
+      color: var(--select-selected-option-color);
+
+      &:hover {
+        background-color: var(--select-selected-option-bg-color);
+        color: var(--select-selected-option-color);
+      }
+    }
+  }
+
+  &-hint {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+
+    position: absolute;
+    left: 12.5px;
+    top: 90%;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+
+    transition: all 150ms;
+
+    &--visible {
+      top: 105%;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &--error {
+      color: #ff5252;
+    }
+  }
+}
+
+@keyframes loading {
+  from {
+    left: -105%;
+  }
+
+  to {
+    left: 105%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+
+ .select{
+  height: 70px;
+ }
+}

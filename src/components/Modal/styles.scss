@@ -1,0 +1,85 @@
+.light {
+  --modal-wrapper-bg: #00000066;
+  --modal-bg: #fff;
+  --modal-title-color: #424242;
+}
+
+.dark {
+  --modal-wrapper-bg: #000000b8;
+  --modal-bg: #242526;
+  --modal-title-color: #959596;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--modal-wrapper-bg);
+  z-index: 1000;
+  transition: border-color 50ms, background-color 50ms, color 75ms;
+}
+
+.modal {
+  border-radius: 12px;
+  background-color: var(--modal-bg);
+  z-index: 1000;
+  height: fit-content;
+  width: fit-content;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transition: border-color 50ms, background-color 50ms, color 75ms;
+
+  *,
+  & {
+    transition: border-color 50ms, background-color 50ms, color 75ms;
+  }
+
+  &-title {
+    color: var(--modal-title-color);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 36px;
+  }
+
+  &-content {
+    transform: scale(1);
+  }
+
+  &-btn-dismiss {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    height: 17.5px;
+    width: 17.5px;
+    background-color: #93959775;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:focus {
+      outline: none;
+    }
+
+    &-line {
+      width: 50%;
+      height: 1px;
+      background-color: #fff;
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+
+  .modal{
+    width: 88% !important;
+  }
+}
