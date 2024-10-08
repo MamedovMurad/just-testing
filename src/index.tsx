@@ -10,19 +10,19 @@ import reportWebVitals from "./reportWebVitals";
 
 import { getIsDarkMode } from "utils/localStorage";
 
-AsanLogin();
-
-document.querySelector("body")?.classList.add(getIsDarkMode() ? "dark" : "light");
+document
+  .querySelector("body")
+  ?.classList.add(getIsDarkMode() ? "dark" : "light");
 
 ReactDOM.render(
-	<Provider store={store}>
-		<BrowserRouter>
-			<React.StrictMode>
-				<App />
-			</React.StrictMode>
-		</BrowserRouter>
-	</Provider>,
-	document.getElementById("root")
+  <Provider store={store}>
+    <BrowserRouter>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </BrowserRouter>
+  </Provider>,
+  document.getElementById("root")
 );
 
 reportWebVitals();
